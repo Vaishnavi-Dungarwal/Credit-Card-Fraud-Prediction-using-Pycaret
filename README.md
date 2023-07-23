@@ -1,22 +1,25 @@
-Project Name : Credit Card Fraud Detection using PyCaret
+Credit Card Fraud Detection using PyCaret
+
+Overview
+The Credit Card Fraud Detection using PyCaret project aims to implement anomaly detection techniques to identify fraudulent transactions in credit card data. We will leverage both traditional Machine Learning (ML) techniques and AutoML using the PyCaret library in this notebook.
 
 
-In this project we will be first making our predictions using Machine Learning Techniques then we will be using Auto ML Technique to do the same. We will be using PyCaret in this notebook. In this project we will be implementing Anamoly detection to detect whether there is any fraudulent transaction.
+Dataset Description
+The dataset contains credit card transactions made by European cardholders in September 2013. It comprises 284,807 transactions, with only 492 being fraudulent. The dataset is highly unbalanced, with fraudulent transactions accounting for only 0.172% of the total.
+The features in the dataset are numerical and have been transformed using Principal Component Analysis (PCA), except for 'Time' and 'Amount'. The 'Time' feature represents the time elapsed between each transaction and the first transaction in the dataset. The 'Amount' feature denotes the transaction amount. The response variable 'Class' takes a value of 1 in case of fraud and 0 otherwise.
+Due to confidentiality issues, we cannot provide the original features or additional background information about the data.
 
 
-Content -
+Steps Involved
+1. Data Analysis
+We will start by performing exploratory data analysis to gain insights into the dataset. This step includes visualizing data distributions, detecting outliers, and understanding feature correlations.
+2. Feature Engineering
+To enhance the predictive power of our models, we will perform feature engineering. This involves handling missing values, transforming data, and creating new relevant features.
+3. Model Building and Prediction using ML Techniques
+In this step, we will train various ML models, such as logistic regression, decision trees, random forests, and others, to detect fraudulent transactions. We will evaluate their performance using appropriate metrics, considering the class imbalance.
+4. Model Building and Prediction using PyCaret (Auto ML)
+PyCaret is an AutoML library that automates the process of training and tuning ML models. We will leverage PyCaret to build a more sophisticated ensemble of models, effectively handling the class imbalance and optimizing performance.
 
-The dataset contains transactions made by credit cards in September 2013 by European cardholders.
 
-This dataset presents transactions that occurred in two days, where we have 492 frauds out of 284,807 transactions. The dataset is highly unbalanced, the positive class (frauds) account for 0.172% of all transactions.
-
-It contains only numerical input variables which are the result of a PCA transformation. Unfortunately, due to confidentiality issues, we cannot provide the original features and more background information about the data. Features V1, V2, … V28 are the principal components obtained with PCA, the only features which have not been transformed with PCA are 'Time' and 'Amount'. Feature 'Time' contains the seconds elapsed between each transaction and the first transaction in the dataset. The feature 'Amount' is the transaction Amount, this feature can be used for example-dependant cost-sensitive learning. Feature 'Class' is the response variable and it takes value 1 in case of fraud and 0 otherwise.
-
-Given the class imbalance ratio, we recommend measuring the accuracy using the Area Under the Precision-Recall Curve (AUPRC). Confusion matrix accuracy is not meaningful for unbalanced classification.
-
-
-We follow following steps:
-- Data Analysis
-- Feature Engineering
-- Model Building and Prediction using ML Techniques
-- Model Building and Prediction using PyCaret(Auto ML)
+Evaluation Metrics
+Due to the class imbalance, we will use the Area Under the Precision-Recall Curve (AUPRC) as the primary evaluation metric. The confusion matrix accuracy is not meaningful for unbalanced classification tasks.
